@@ -1,0 +1,2 @@
+public class Nergigante : Monster {
+}
