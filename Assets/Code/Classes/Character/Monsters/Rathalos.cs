@@ -2,7 +2,7 @@ public class Rathalos : Monster {
   public Rathalos() {
     name = "Rathalos";
     id = 5;
-    attack = 100;
+    attack = 500;
     defence = 0;
     health = 1500;
     is_alive = true;

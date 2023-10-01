@@ -5,8 +5,8 @@ public class Gold : Hunter {
     name = "Gold";
     id = 1;
     attack = 100;
-    defence = 0;
-    health = 100;
+    defence = 400;
+    health = 3000;
     is_alive = true;
     hunting_group = "Inferno Hunters";
     race = "Human";

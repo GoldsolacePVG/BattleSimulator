@@ -5,8 +5,8 @@ public class Minoto : Hunter {
     name = "Minoto";
     id = 2;
     attack = 100;
-    defence = 0;
-    health = 100;
+    defence = 200;
+    health = 1500;
     is_alive = true;
     hunting_group = "Kamura Hunters";
     race = "Wyverian";

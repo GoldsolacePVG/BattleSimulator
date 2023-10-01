@@ -5,7 +5,7 @@ public class Ayuria : Hunter {
     name = "Ayuria";
     id = 4;
     attack = 100;
-    defence = 20;
+    defence = 200;
     health = 1000;
     is_alive = true;
     hunting_group = "Hero Riders";

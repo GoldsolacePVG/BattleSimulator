@@ -5,8 +5,8 @@ public class Juliu : Hunter {
     name = "Juliu";
     id = 3;
     attack = 100;
-    defence = 0;
-    health = 100;
+    defence = 300;
+    health = 2000;
     is_alive = true;
     hunting_group = "Inferno Hunters";
     race = "Human";
