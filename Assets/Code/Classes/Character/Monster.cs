@@ -4,6 +4,6 @@ public class Monster : Character{
     public int weakness;
 
     public enum Elements {
-        kFire, kWater, kIce, kThunder, kDraco, kEnergy, kRaw
+        kFire, kIce, KDraco, kThunder, kWater, kRaw, kEnergy
     };
 }

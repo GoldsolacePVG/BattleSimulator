@@ -5,6 +5,7 @@ public class Zinogre : Monster {
     attack = 200;
     defence = 0;
     health = 2000;
+    is_alive = true;
     race = "Fanged Wyvern";
     element = (int)Elements.kThunder;
     weakness = (int)Elements.kIce;
