@@ -4,4 +4,6 @@ public class Character {
     public int attack;
     public int defence;
     public int health;
+
+    public Character(){}
 }

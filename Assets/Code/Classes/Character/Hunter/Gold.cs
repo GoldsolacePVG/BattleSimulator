@@ -1,5 +1,6 @@
 public class Gold : Hunter {
   public Master_Kamura_Armor m_kamura_armor_;
+  public Kamura_Katana kamura_katana_;
   
   public Gold() {
     name = "Gold";
