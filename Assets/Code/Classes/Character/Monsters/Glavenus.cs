@@ -3,9 +3,10 @@ public class Glavenus : Monster {
     name = "Glavenus";
     id = 6;
     attack = 200;
-    defence = 400;
+    defence = 0;
     health = 3000;
     race = "Brute Wyvern";
     element = (int)Elements.kFire;
+    weakness = (int)Elements.kWater;
   }
 }

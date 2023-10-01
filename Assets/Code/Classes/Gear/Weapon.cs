@@ -1,18 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+public class Weapon : Gear {
+    public int attack_multiplier;
+    public int elemental_attack;
 
-public class Weapon : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public enum Weapon_Elements {
+        kFire, kIce, KDraco, kThunder, kWater, kRaw
     }
 }

@@ -7,5 +7,6 @@ public class Rathalos : Monster {
     health = 1500;
     race = "Flying Wyvern";
     element = (int)Elements.kFire;
+    weakness = (int)Elements.kWater;
   }
 }
