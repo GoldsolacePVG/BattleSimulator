@@ -8,4 +8,16 @@ public class Character {
     public bool is_alive;
 
     public Character(){}
+
+    public virtual int Attack(){
+        int damage = attack;
+
+        return damage;
+    }
+
+    public virtual int TakeDamage(int damage_dealt){
+        int health = health - damage_dealt;
+
+        return health;
+    }
 }

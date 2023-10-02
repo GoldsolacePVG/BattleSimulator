@@ -11,23 +11,15 @@ public class Monster : Character{
 
     public Monster(){}
 
-    public virtual int Attack(Monster monster, Hunter hunter){
-        int damage = monster.attack;
-        damage -= hunter.defence;
-
-        Debug.Log("MONSTERS: " + monster.name + " has dealt " + damage + " damage to " + hunter.name);
-        return damage;
-    }
-
-    public virtual int TakeDamage(Monster monster, Hunter hunter, int damage_dealt){
-        if(monster.weakness == hunter.weapon.elemental_attack){
+    public override int TakeDamage(Hunter hunter, int damage_dealt){
+        if(weakness == hunter.weapon.elemental_attack){
             damage_dealt += 200;
         }else if(hunter.weapon.elemental_attack == 5){
             damage_dealt += 100;
         }
-        int health = monster.health - damage_dealt;
+        int health_aux = health - damage_dealt;
 
-        Debug.Log("HUNTERS: " + hunter.name + " has dealt " + damage_dealt + " damage to " + monster.name);
-        return health;
+        Debug.Log("HUNTERS: " + hunter.name + " has dealt " + damage_dealt + " damage to " + name);
+        return health_aux;
     }
 }

@@ -6,18 +6,23 @@ public class Hunter : Character {
     public string race;
     public string hunter_type;
     public Weapon weapon;
+    public Armor armor;
 
     public Hunter(){}
     
-    public virtual int Attack(Hunter hunter, Monster monster) {
-        int damage = hunter.attack * hunter.weapon.attack_multiplier;
+    public override int Attack() {
+        int damage = attack * weapon.attack_multiplier;
 
         return damage;
     }
 
-    public virtual int TakeDamage(Hunter hunter, Monster monster, int damage_dealt){
-        int health = hunter.health -= damage_dealt;
+    public override int TakeDamage(Monster monster, int damage_dealt){
+        health = health * armor.health_multiplier;
+        defence = defence * defence_multiplier;
+        damage_dealt -= defence;
+        int health_aux = health -= damage_dealt;
 
-        return health;
+        Debug.Log("MONSTERS: " + monster.name + " has dealt " + damage + " damage to " + name);
+        return health_aux;
     }
 }

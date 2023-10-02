@@ -12,14 +12,14 @@ public class MainScript : MonoBehaviour {
     public int rathalos_objective = 1, glavenus_objective = 2, nergigante_objective = 3, zinogre_objective = 0;
 
     // Character variables
-    public Gold gold_;
-    public Minoto minoto_;
-    public Juliu juliu_;
-    public Ayuria ayuria_;
-    public Rathalos rathalos_;
-    public Glavenus glavenus_;
-    public Nergigante nergigante_;
-    public Zinogre zinogre_;
+    public Character gold_;
+    public Character minoto_;
+    public Character juliu_;
+    public Character ayuria_;
+    public Character rathalos_;
+    public Character glavenus_;
+    public Character nergigante_;
+    public Character zinogre_;
 
     // Character list
     public List<Hunter> hunterList_;
@@ -64,7 +64,7 @@ public class MainScript : MonoBehaviour {
             if(monsterList_[0].is_alive){
                 if(hunterList_[0].is_alive){
                     rathalos_damage = monsterList_[0].Attack(monsterList_[0], hunterList_[0]);
-                    hunterList_[0].health -= rathalos_damage;
+                    hunterList_[0].health = hunterList_[0].TakeDamage(monsterList_[0],); // NO TERMINADO
                     if(hunterList_[0].health <= 0){
                         hunterList_[0].is_alive = false;
                     }
