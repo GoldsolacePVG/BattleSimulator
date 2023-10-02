@@ -1,5 +1,5 @@
 public class Gold : Hunter {
-  public Kamura_Katana kamura_katana;
+  // public Kamura_Katana kamura_katana;
   
   public Gold() {
     name = "Gold";
@@ -11,6 +11,6 @@ public class Gold : Hunter {
     hunting_group = "Inferno Hunters";
     race = "Human";
     hunter_type = "Both";
-    kamura_katana = new Kamura_Katana();
+    weapon = new Kamura_Katana();
   }
 }

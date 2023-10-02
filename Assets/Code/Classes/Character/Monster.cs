@@ -18,4 +18,16 @@ public class Monster : Character{
         Debug.Log("MONSTERS: " + monster.name + " has dealt " + damage + " damage to " + hunter.name);
         return damage;
     }
+
+    public virtual int TakeDamage(Monster monster, Hunter hunter, int damage_dealt){
+        if(monster.weakness == hunter.weapon.elemental_attack){
+            damage_dealt += 200;
+        }else if(hunter.weapon.elemental_attack == 5){
+            damage_dealt += 100;
+        }
+        int health = monster.health - damage_dealt;
+
+        Debug.Log("HUNTERS: " + hunter.name + " has dealt " + damage_dealt + " damage to " + monster.name);
+        return health;
+    }
 }
