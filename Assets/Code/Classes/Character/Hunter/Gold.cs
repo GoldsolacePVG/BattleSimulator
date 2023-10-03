@@ -10,5 +10,6 @@ public class Gold : Hunter {
     race = "Human";
     hunter_type = "Both";
     weapon = new Kamura_Katana();
+    armor = new Master_Kamura_Armor();
   }
 }
