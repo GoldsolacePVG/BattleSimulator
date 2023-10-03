@@ -22,8 +22,8 @@ public class MainScript : MonoBehaviour {
     public Character zinogre_;
 
     // Character list
-    public List<Hunter> hunterList_;
-    public List<Monster> monsterList_;
+    public List<Character> hunterList_;
+    public List<Character> monsterList_;
 
     // Start is called before the first frame update
     void Start() {
@@ -36,8 +36,8 @@ public class MainScript : MonoBehaviour {
         nergigante_ = new Nergigante();
         zinogre_ = new Zinogre();
 
-        hunterList_ = new List<Hunter>();
-        monsterList_ = new List<Monster>();
+        hunterList_ = new List<Character>();
+        monsterList_ = new List<Character>();
 
         // Hunters
         hunterList_.Add(gold_); // Gold = 0
@@ -63,15 +63,15 @@ public class MainScript : MonoBehaviour {
             // Rathalos Attack
             if(monsterList_[0].is_alive){
                 if(hunterList_[0].is_alive){
-                    rathalos_damage = monsterList_[0].Attack(monsterList_[0], hunterList_[0]);
-                    hunterList_[0].health = hunterList_[0].TakeDamage(monsterList_[0], rathalos_damage); // NO TERMINADO
+                    rathalos_damage = monsterList_[0].Attack();
+                    hunterList_[0].health = hunterList_[0].TakeDamage(monsterList_[0], rathalos_damage);
                     if(hunterList_[0].health <= 0){
                         hunterList_[0].is_alive = false;
                     }
                 }
                 if(hunterList_[rathalos_objective].is_alive && !hunterList_[0].is_alive){
-                    rathalos_damage = monsterList_[0].Attack(monsterList_[0], hunterList_[rathalos_objective]);
-                    hunterList_[rathalos_objective].health -= rathalos_damage;
+                    rathalos_damage = monsterList_[0].Attack();
+                    hunterList_[rathalos_objective].health = hunterList_[rathalos_objective].TakeDamage(monsterList_[0], rathalos_damage);
                     if(hunterList_[rathalos_objective].health <= 0){
                         hunterList_[rathalos_objective].is_alive = false;
                         if(rathalos_objective < 3){
@@ -88,15 +88,15 @@ public class MainScript : MonoBehaviour {
             // Glavenus Attack
             if(monsterList_[1].is_alive){
                 if(hunterList_[1].is_alive){
-                    glavenus_damage = monsterList_[1].Attack(monsterList_[1], hunterList_[1]);
-                    hunterList_[1].health -= glavenus_damage;
+                    glavenus_damage = monsterList_[1].Attack();
+                    hunterList_[1].health = hunterList_[1].TakeDamage(monsterList_[1], glavenus_damage);
                     if(hunterList_[1].health <= 0){
                         hunterList_[1].is_alive = false;
                     }
                 }
                 if(hunterList_[glavenus_objective].is_alive && !hunterList_[1].is_alive){
-                    glavenus_damage = monsterList_[1].Attack(monsterList_[1], hunterList_[glavenus_objective]);
-                    hunterList_[glavenus_objective].health -= glavenus_damage;
+                    glavenus_damage = monsterList_[1].Attack();
+                    hunterList_[glavenus_objective].health = hunterList_[glavenus_objective].TakeDamage(monsterList_[1], glavenus_damage);
                     if(hunterList_[glavenus_objective].health <= 0){
                         hunterList_[glavenus_objective].is_alive = false;
                         if(glavenus_objective < 3){
@@ -116,15 +116,15 @@ public class MainScript : MonoBehaviour {
             // Nergigante Attack
             if(monsterList_[2].is_alive){
                 if(hunterList_[2].is_alive){
-                    nergigante_damage = monsterList_[2].Attack(monsterList_[2], hunterList_[2]);
-                    hunterList_[2].health -= nergigante_damage;
+                    nergigante_damage = monsterList_[2].Attack();
+                    hunterList_[2].health = hunterList_[2].TakeDamage(monsterList_[2], nergigante_damage);
                     if(hunterList_[2].health <= 0){
                         hunterList_[2].is_alive = false;
                     }
                 }
                 if(hunterList_[nergigante_objective].is_alive && !hunterList_[2].is_alive){
-                    nergigante_damage = monsterList_[2].Attack(monsterList_[2], hunterList_[nergigante_objective]);
-                    hunterList_[nergigante_objective].health -= nergigante_damage;
+                    nergigante_damage = monsterList_[2].Attack();
+                    hunterList_[nergigante_objective].health = hunterList_[nergigante_objective].TakeDamage(monsterList_[2], nergigante_damage);
                     if(hunterList_[nergigante_objective].health <= 0){
                         hunterList_[nergigante_objective].is_alive = false;
                         if(nergigante_objective < 3){
@@ -144,15 +144,15 @@ public class MainScript : MonoBehaviour {
             // Zinogre Attack
             if(monsterList_[3].is_alive){
                 if(hunterList_[3].is_alive){
-                    zinogre_damage = monsterList_[3].Attack(monsterList_[3], hunterList_[3]);
-                    hunterList_[3].health -= zinogre_damage;
+                    zinogre_damage = monsterList_[3].Attack();
+                    hunterList_[3].health = hunterList_[3].TakeDamage(monsterList_[3], zinogre_damage);
                     if(hunterList_[3].health <= 0){
                         hunterList_[3].is_alive = false;
                     }
                 }
                 if(hunterList_[zinogre_objective].is_alive && !hunterList_[3].is_alive){
-                    zinogre_damage = monsterList_[3].Attack(monsterList_[3], hunterList_[zinogre_objective]);
-                    hunterList_[zinogre_objective].health -= zinogre_damage;
+                    zinogre_damage = monsterList_[3].Attack();
+                    hunterList_[zinogre_objective].health = hunterList_[zinogre_objective].TakeDamage(monsterList_[3], zinogre_damage);
                     if(hunterList_[zinogre_objective].health <= 0){
                         hunterList_[zinogre_objective].is_alive = false;
                         if(zinogre_objective < 3){
@@ -179,15 +179,15 @@ public class MainScript : MonoBehaviour {
             // Gold attack
             if(hunterList_[0].is_alive){
                 if(monsterList_[0].is_alive){
-                    gold_damage = hunterList_[0].Attack(hunterList_[0], monsterList_[0]);
-                    monsterList_[0].health -= gold_damage;
+                    gold_damage = hunterList_[0].Attack();
+                    monsterList_[0].health = monsterList_[0].TakeDamage(hunterList_[0], gold_damage);
                     if(monsterList_[0].health <= 0){
                         monsterList_[0].is_alive = false;
                     }
                 }
                 if(monsterList_[gold_objective].is_alive && !monsterList_[0].is_alive){
-                    gold_damage = hunterList_[0].Attack(hunterList_[0], monsterList_[gold_objective]);
-                    monsterList_[gold_objective].health -= gold_damage;
+                    gold_damage = hunterList_[0].Attack();
+                    monsterList_[gold_objective].health = monsterList_[gold_objective].TakeDamage(hunterList_[0], gold_damage);
                     if(monsterList_[gold_objective].health <= 0){
                         monsterList_[gold_objective].is_alive = false;
                         if(gold_objective < 3){
@@ -204,15 +204,15 @@ public class MainScript : MonoBehaviour {
             // Minoto attack
             if(hunterList_[1].is_alive){
                 if(monsterList_[1].is_alive){
-                    minoto_damage = hunterList_[1].Attack(hunterList_[1], monsterList_[1]);
-                    monsterList_[1].health -= minoto_damage;
+                    minoto_damage = hunterList_[1].Attack();
+                    monsterList_[1].health = monsterList_[1].TakeDamage(hunterList_[1], minoto_damage);
                     if(monsterList_[1].health <= 0){
                         monsterList_[1].is_alive = false;
                     }
                 }
                 if(monsterList_[minoto_objective].is_alive && !monsterList_[1].is_alive){
-                    minoto_damage = hunterList_[1].Attack(hunterList_[1], monsterList_[minoto_objective]);
-                    monsterList_[minoto_objective].health -= minoto_damage;
+                    minoto_damage = hunterList_[1].Attack();
+                    monsterList_[minoto_objective].health = monsterList_[minoto_objective].TakeDamage(hunterList_[1], minoto_damage);
                     if(monsterList_[minoto_objective].health <= 0){
                         monsterList_[minoto_objective].is_alive = false;
                         if(minoto_objective < 3){
@@ -232,15 +232,15 @@ public class MainScript : MonoBehaviour {
             // Juliu attack
             if(hunterList_[2].is_alive){
                 if(monsterList_[2].is_alive){
-                    juliu_damage = hunterList_[2].Attack(hunterList_[2], monsterList_[2]);
-                    monsterList_[2].health -= juliu_damage;
+                    juliu_damage = hunterList_[2].Attack();
+                    monsterList_[2].health = monsterList_[2].TakeDamage(hunterList_[2], juliu_damage);
                     if(monsterList_[2].health <= 0){
                         monsterList_[2].is_alive = false;
                     }
                 }
                 if(monsterList_[juliu_objective].is_alive && !monsterList_[2].is_alive){
-                    juliu_damage = hunterList_[2].Attack(hunterList_[2], monsterList_[juliu_objective]);
-                    monsterList_[juliu_objective].health -= juliu_damage;
+                    juliu_damage = hunterList_[2].Attack();
+                    monsterList_[juliu_objective].health = monsterList_[juliu_objective].TakeDamage(hunterList_[2], juliu_damage);
                     if(monsterList_[juliu_objective].health <= 0){
                         monsterList_[juliu_objective].is_alive = false;
                         if(juliu_objective < 3){
@@ -260,15 +260,15 @@ public class MainScript : MonoBehaviour {
             // Ayuria attack
             if(hunterList_[3].is_alive){
                 if(monsterList_[3].is_alive){
-                    ayuria_damage = hunterList_[3].Attack(hunterList_[3], monsterList_[3]);
-                    monsterList_[3].health -= ayuria_damage;
+                    ayuria_damage = hunterList_[3].Attack();
+                    monsterList_[3].health = monsterList_[3].TakeDamage(hunterList_[3], ayuria_damage);
                     if(monsterList_[3].health <= 0){
                         monsterList_[3].is_alive = false;
                     }
                 }
                 if(monsterList_[ayuria_objective].is_alive && !monsterList_[3].is_alive){
-                    ayuria_damage = hunterList_[3].Attack(hunterList_[3], monsterList_[ayuria_objective]);
-                    monsterList_[ayuria_objective].health -= ayuria_damage;
+                    ayuria_damage = hunterList_[3].Attack();
+                    monsterList_[ayuria_objective].health = monsterList_[ayuria_objective].TakeDamage(hunterList_[3], ayuria_damage);
                     if(monsterList_[ayuria_objective].health <= 0){
                         monsterList_[ayuria_objective].is_alive = false;
                         if(ayuria_objective < 3){

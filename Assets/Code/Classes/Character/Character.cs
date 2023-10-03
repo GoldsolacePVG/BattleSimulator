@@ -15,7 +15,7 @@ public class Character {
         return damage;
     }
 
-    public virtual int TakeDamage(int damage_dealt){
+    public virtual int TakeDamage(Character monster,int damage_dealt){
         int health = health - damage_dealt;
 
         return health;
