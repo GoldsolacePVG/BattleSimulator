@@ -10,5 +10,6 @@ public class Ayuria : Hunter {
     race = "Human";
     hunter_type = "Rider";
     weapon = new Barioth_Horn();
+    armor = new Barioth_Armor();
   }
 }
