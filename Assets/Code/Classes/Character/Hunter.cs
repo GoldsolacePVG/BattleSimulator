@@ -18,7 +18,7 @@ public class Hunter : Character {
 
     public override int TakeDamage(Monster monster, int damage_dealt){
         health = health * armor.health_multiplier;
-        defence = defence * defence_multiplier;
+        defence = defence * armor.defence_multiplier;
         damage_dealt -= defence;
         int health_aux = health -= damage_dealt;
 
