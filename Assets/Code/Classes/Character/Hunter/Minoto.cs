@@ -10,5 +10,6 @@ public class Minoto : Hunter {
     race = "Wyverian";
     hunter_type = "Hunter";
     weapon = new Kamura_Bow();
+    armor = new Kamura_Armor();
   }
 }
