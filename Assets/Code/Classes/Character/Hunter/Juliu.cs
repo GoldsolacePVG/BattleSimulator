@@ -10,5 +10,6 @@ public class Juliu : Hunter {
     race = "Human";
     hunter_type = "Hunter";
     weapon = new Rath_Katana();
+    armor = new Rath_Armor();
   }
 }
