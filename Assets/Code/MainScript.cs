@@ -64,7 +64,7 @@ public class MainScript : MonoBehaviour {
             if(monsterList_[0].is_alive){
                 if(hunterList_[0].is_alive){
                     rathalos_damage = monsterList_[0].Attack(monsterList_[0], hunterList_[0]);
-                    hunterList_[0].health = hunterList_[0].TakeDamage(monsterList_[0],); // NO TERMINADO
+                    hunterList_[0].health = hunterList_[0].TakeDamage(monsterList_[0], rathalos_damage); // NO TERMINADO
                     if(hunterList_[0].health <= 0){
                         hunterList_[0].is_alive = false;
                     }
