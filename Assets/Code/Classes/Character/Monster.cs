@@ -11,7 +11,7 @@ public class Monster : Character{
 
     public Monster(){}
 
-    public override int TakeDamage(Character hunter, int damage_dealt){
+    public override int TakeDamage(Hunter hunter, int damage_dealt){
         if(weakness == hunter.weapon.elemental_attack){
             damage_dealt += 200;
         }else if(hunter.weapon.elemental_attack == 5){

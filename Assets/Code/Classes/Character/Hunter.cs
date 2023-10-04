@@ -16,13 +16,13 @@ public class Hunter : Character {
         return damage;
     }
 
-    public override int TakeDamage(Character monster, int damage_dealt){
+    public override int TakeDamage(Monster monster, int damage_dealt){
         health = health * armor.health_multiplier;
         defence = defence * armor.defence_multiplier;
         damage_dealt -= defence;
         int health_aux = health -= damage_dealt;
 
-        Debug.Log("MONSTERS: " + monster.name + " has dealt " + damage + " damage to " + name);
+        Debug.Log("MONSTERS: " + monster.name + " has dealt " + damage_dealt + " damage to " + name);
         return health_aux;
     }
 }

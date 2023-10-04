@@ -1,5 +1,11 @@
 [System.Serializable]
 public class Character {
+    // En caso de querer mostrar una variable aunque sea "private" usar:
+    // [SerializeField]
+    // Para poder verla en Unity
+    // Estructura:
+    // [SerializeField]
+    // private type name;
     public string name;
     public int id;
     public int attack;
@@ -15,8 +21,14 @@ public class Character {
         return damage;
     }
 
-    public virtual int TakeDamage(Character monster,int damage_dealt){
-        int health = health - damage_dealt;
+    public virtual int TakeDamage(Hunter hunter, int damage_dealt){
+        int health_var = health - damage_dealt;
+
+        return health;
+    }
+
+    public virtual int TakeDamage(Monster monster,int damage_dealt){
+        int health_var = health - damage_dealt;
 
         return health;
     }
